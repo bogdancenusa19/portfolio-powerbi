@@ -226,14 +226,19 @@ body {
   }
 /* NAVBAR STYLES */
 .navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #1f2e3d;
+    color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1f2e3d;
-    color: white;
     padding: 1rem 2rem;
     flex-wrap: wrap;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
   }
+  
   
   .navbar-left h1 {
     margin: 0;
@@ -475,4 +480,173 @@ html, body {
     color: white;
     margin-top: auto;
   }
-         
+/* ABOUT ME SECTION */
+.about-me-section {
+    text-align: center;
+    padding: 4rem 1rem 3rem;
+    background: #ffffff;
+  }
+  
+  .profile-pic {
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin-bottom: 1.5rem;
+  }
+  
+  .about-text {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  /* EXPERIENCE TIMELINE */
+  .experience-section {
+    background-color: #f4f4f4;
+    padding: 4rem 1rem;
+  }
+  
+  .experience-section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2rem;
+    color: #1f2e3d;
+  }
+  
+  .timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background-color: #007acc;
+  }
+  
+  .timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 1.5rem 2rem;
+    box-sizing: border-box;
+  }
+  
+  .timeline-item.left {
+    left: 0;
+    text-align: right;
+  }
+  
+  .timeline-item.right {
+    left: 50%;
+    text-align: left;
+  }
+  
+  .timeline-item .content {
+    background: white;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    position: relative;
+  }
+  
+  .timeline-item.left .content::after {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    right: -8px;
+    width: 16px;
+    height: 16px;
+    background: #007acc;
+    border-radius: 50%;
+  }
+  
+  .timeline-item.right .content::after {
+    content: '';
+    position: absolute;
+    top: 1rem;
+    left: -8px;
+    width: 16px;
+    height: 16px;
+    background: #007acc;
+    border-radius: 50%;
+  }
+  
+  .timeline-item h4 {
+    margin: 0 0 0.5rem;
+    color: #007acc;
+  }
+  
+  /* RESPONSIVE TIMELINE */
+  @media (max-width: 768px) {
+    .timeline::before {
+      left: 8px;
+    }
+  
+    .timeline-item {
+      width: 100%;
+      padding-left: 2.5rem;
+      padding-right: 0;
+    }
+  
+    .timeline-item.left,
+    .timeline-item.right {
+      left: 0;
+      text-align: left;
+    }
+  
+    .timeline-item .content {
+      margin-left: 1rem;
+    }
+  
+    .timeline-item.left .content::after,
+    .timeline-item.right .content::after {
+      left: -22px;
+      right: auto;
+    }
+  }
+  .experience-title h4 {
+    margin: 0 0 0.5rem;
+    color: #007acc;
+    font-size: 1.1rem;
+  }
+  
+  .experience-description p {
+    margin: 0;
+    text-align: left;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+  }
+  .experience-title h4 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #007acc;
+  }
+  
+  .experience-title .role {
+    margin: 0.2rem 0 1rem;
+    font-weight: 500;
+    color: #1f2e3d;
+    font-size: 1rem;
+  }
+  
+  .experience-description p {
+    margin: 0;
+    text-align: left;
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+  }
+    
+           
