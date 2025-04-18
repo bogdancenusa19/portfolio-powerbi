@@ -13,7 +13,7 @@ function openImage(img) {
 
   function promptDownload() {
     const input = prompt(
-      "Enter access key to unlock the report.\n\nYou will be redirected to Google Drive.\nTo download the project, click the top-right download icon on the page."
+      "You will be redirected to Google Drive.\nTo download the project, click the top-right download icon on the page.\n\n Enter access key to unlock the report:"
     );
   
     if (!input) return;
