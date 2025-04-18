@@ -4,108 +4,44 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Power BI Portfolio</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      background-color: #1f2e3d;
-      color: white;
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    header p {
-      margin-top: 0.5rem;
-      font-size: 1.2rem;
-      color: #ccc;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-
-    .project {
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      transition: transform 0.2s;
-    }
-
-    .project:hover {
-      transform: translateY(-5px);
-    }
-
-    .project h2 {
-      margin-top: 0;
-      color: #1f2e3d;
-    }
-
-    .project p {
-      color: #555;
-    }
-
-    .project a {
-      text-decoration: none;
-      color: #007acc;
-      font-weight: bold;
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #1f2e3d;
-      color: white;
-      margin-top: 3rem;
-    }
-  </style>
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
 
-  <header>
-    <h1>My Power BI Portfolio</h1>
-    <p>Data speaks louder than words.</p>
-  </header>
+  <div class="page-wrapper">
 
-  <div class="container">
+    <!-- ✅ Navbar -->
+    <nav class="navbar">
+      <div class="navbar-left">
+        <h1>My Power BI Portfolio</h1>
+        <p>Data speaks louder than words.</p>
+      </div>
+      <div class="navbar-right">
+        <a href="#projects">Projects</a>
+        <a href="#about">About Me</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
 
-    <div class="project">
-      <h2>Sales Dashboard 2024</h2>
-      <p>This project analyzes sales data for Q1 and Q2 of 2024, identifying key trends and top-performing regions.</p>
-      <p>
-        🔗 <a href="https://app.powerbi.com/view?r=YOUR_LINK_HERE" target="_blank">View Dashboard</a> |
-        📁 <a href="SalesDashboard2024.pbix" download>Download PBIX</a>
-      </p>
+    <div class="carousel-section">
+      <div class="carousel">
+    
+        <div class="carousel-item">
+          <img src="assets/Page1.png" alt="MarketMindz Preview">
+          <h3>MarketMindz Sales Dashboard</h3>
+          <p>Sales and marketing insights for a fictional retail client.</p>
+          <a href="marketmindz.html" class="btn">View Project</a>
+        </div>
+    
+      </div>
     </div>
+    
 
-    <div class="project">
-      <h2>Customer Segmentation Analysis</h2>
-      <p>An insightful look at customer behavior using clustering and demographic data to enhance marketing strategy.</p>
-      <p>
-        🔗 <a href="https://app.powerbi.com/view?r=YOUR_LINK_HERE" target="_blank">View Dashboard</a>
-      </p>
-    </div>
-
-    <!-- Add more projects here -->
+    <footer>
+      &copy; 2025 Bogdan Cenusa — All rights reserved.
+    </footer>
 
   </div>
-
-  <footer>
-    &copy; 2025 Your Name — All rights reserved.
-  </footer>
 
 </body>
 </html>
