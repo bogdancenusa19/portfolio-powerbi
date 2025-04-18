@@ -3,15 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MarketMindz Insights Dashboard</title>
+  <title>MarketMindz Market Research</title>
   <link rel="stylesheet" href="css/main.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/icon.png">
 </head>
 <body>
 
   <header>
-    <h1>MarketMindz Insights Dashboard</h1>
-    <p>The client is a small retail vendor specializing in food and beverage products.</p>
-    <p>16 April - 18 April 2025</p>
+    <nav class="project-navbar">
+      <div class="project-nav-left">
+        <h1>MarketMindz</h1>
+        <p class="nav-subtitle">Market Research Dashboard</p>
+      </div>
+      <div class="project-nav-right">
+        <a href="#summary">Project Summary</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#workflow">Project Workflow</a>
+        <a href="#" onclick="promptDownload()" class="btn btn-yellow small-btn">⬇ Download</a>
+        <a href="index.html" class="btn small-btn">← Back</a>
+      </div>
+    </nav>
+    
+    
   </header>
 
   <div class="container">
@@ -22,7 +35,8 @@
     </section>
 
     <!-- Project Details -->
-    <section class="project-details">
+    <section class="project-details" id="summary">
+
         <h3>Project Summary</h3>
         <ul>
           <li><strong>Tools used:</strong> Power BI, Power Query</li>
@@ -38,12 +52,17 @@
           <li>3. Who are our customers?</li>
           <li>4. What is driving campaign performance and buyer decision-making?</li>
         </ul>
+        <div class="project-date">
+          <em>Worked on: April 16 – April 18, 2025</em>
+        </div>
+        
       </section>
       
       
 
     <!-- Gallery -->
-    <div class="gallery">
+    <div class="gallery" id="gallery">
+
 
         <div class="image-block">
           <img src="assets/Page1.png" alt="Page 1 - Campaigns Performance" onclick="openImage(this)">
@@ -66,6 +85,47 @@
       <div id="lightbox" class="lightbox" onclick="closeImage()">
         <img id="lightbox-img" src="" alt="Full image" />
       </div>
+
+      <section class="project-steps" id="workflow">
+
+        <h3>Project Workflow</h3>
+        <p class="section-subtitle">Learned from Google Data Analytics course</p>
+        <div class="steps-grid">
+      
+          <div class="step">
+            <h4>🟢 Ask</h4>
+            <p>The business problem was already defined through clear questions provided in the initial brief, focused on campaign results, customer behavior, and product performance.</p>
+          </div>
+      
+          <div class="step">
+            <h4>🧹 Prepare</h4>
+            <p>I explored and validated the dataset, ensuring it was suitable for analysis. I reviewed sales, customer, and marketing data before loading it into Power BI.</p>
+          </div>
+      
+          <div class="step">
+            <h4>🔧 Process</h4>
+            <p>I cleaned and transformed the data using Power Query. I created referenced dimension tables for Campaigns, Platforms, and Products to optimize report structure and usability.</p>
+          </div>
+      
+          <div class="step">
+            <h4>📊 Analyze</h4>
+            <p>With the cleaned dataset, I built the dashboard using KPIs and charts that answered the business questions and highlight actionable insights.</p>
+          </div>
+      
+          <div class="step">
+            <h4>📤 Share</h4>
+            <p>I structured the report to be clean and interactive using slicers, filters, and clear navigation. The final result was easy to interpret and presentation-ready.</p>
+          </div>
+      
+          <div class="step">
+            <h4>🧠 Act</h4>
+            <p>The dashboard supports decision-making by providing a clear overview of customer profiles, product trends, and campaign effectiveness.</p>
+          </div>
+      
+        </div>
+      </section>
+      
+      
       
       
       <div class="button-group">

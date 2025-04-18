@@ -648,5 +648,156 @@ html, body {
     color: #333;
     line-height: 1.6;
   }
-    
+  .project-date {
+    text-align: right;
+    margin-top: 1.5rem;
+    font-size: 0.95rem;
+    color: #666;
+  }
+  .carousel-item.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+  
+  .btn-disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+    text-decoration: none;
+  }
+  
+  .btn-disabled:hover {
+    background-color: #ccc;
+  }
+  .countdown-timer {
+    margin-top: 0.8rem;
+    font-size: 0.85rem;
+    color: #444;
+    text-align: right;
+  }
+  .carousel-item {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  
+  .carousel-item:hover {
+    transform: translateY(-6px) scale(1.015);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  .project-steps {
+    margin: 2rem 0;
+    padding: 2rem 1rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  }
+  
+  .project-steps h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #1f2e3d;
+  }
+  
+  .steps-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  .step h4 {
+    margin-bottom: 0.5rem;
+    color: #007acc;
+    font-size: 1.1rem;
+  }
+  
+  .step p {
+    text-align: justify;
+    color: #333;
+    line-height: 1.6;
+    font-size: 0.98rem;
+  }
+  
+  @media (max-width: 768px) {
+    .steps-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  .section-subtitle {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: -1rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+  }
+  .project-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #1f2e3d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    flex-wrap: wrap;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .project-nav-left h1 {
+    margin: 0;
+    font-size: 1.3rem;
+    color: #fff;
+  }
+  
+  .nav-subtitle {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #ccc;
+  }
+  
+  .project-nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  .project-nav-right a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+  }
+  
+  .project-nav-right a:hover {
+    color: #f1c40f;
+  }
+  
+  .small-btn {
+    padding: 0.4rem 0.9rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+  }
+  .project-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgba(31, 46, 61, 1); /* fully opaque */
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    flex-wrap: wrap;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  }
+  
+  .project-navbar.scrolled {
+    background-color: rgba(31, 46, 61, 0.85); /* more transparent */
+  }
+          
            
