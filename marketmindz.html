@@ -80,10 +80,12 @@
       
       </div>
       
-      <!-- 🔍 Lightbox container -->
       <div id="lightbox" class="lightbox" onclick="closeImage()">
+        <button class="lightbox-btn prev" onclick="event.stopPropagation(); showPrevImage();">←</button>
         <img id="lightbox-img" src="" alt="Full image" />
+        <button class="lightbox-btn next" onclick="event.stopPropagation(); showNextImage();">→</button>
       </div>
+      
 
       <section class="project-steps" id="workflow">
 

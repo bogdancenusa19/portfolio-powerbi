@@ -1114,6 +1114,48 @@ html, body {
   margin-bottom: 3rem;
 }
 
+.gallery .image-block {
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery .image-block img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.lightbox-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  color: #1f2e3d;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  z-index: 1001;
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+.lightbox-btn:hover {
+  background: #f1c40f;
+  color: #1f2e3d;
+}
+
+.lightbox-btn.prev {
+  left: 30px;
+}
+
+.lightbox-btn.next {
+  right: 30px;
+}
 
 
 

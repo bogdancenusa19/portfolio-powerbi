@@ -82,6 +82,42 @@ function openImage(img) {
   }
 });
 
+const galleryImages = Array.from(document.querySelectorAll('.gallery .image-block img'));
+let currentIndex = 0;
+
+function openImage(img) {
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  currentIndex = galleryImages.indexOf(img);
+  lightboxImg.src = img.src;
+  lightbox.style.display = 'flex';
+}
+
+function closeImage() {
+  document.getElementById('lightbox').style.display = 'none';
+}
+
+function showNextImage() {
+  currentIndex = (currentIndex + 1) % galleryImages.length;
+  document.getElementById('lightbox-img').src = galleryImages[currentIndex].src;
+}
+
+function showPrevImage() {
+  currentIndex = (currentIndex - 1 + galleryImages.length) % galleryImages.length;
+  document.getElementById('lightbox-img').src = galleryImages[currentIndex].src;
+}
+document.addEventListener('keydown', function (event) {
+  const lightbox = document.getElementById('lightbox');
+  if (lightbox.style.display === 'flex') {
+    if (event.key === 'ArrowRight') {
+      showNextImage();
+    } else if (event.key === 'ArrowLeft') {
+      showPrevImage();
+    } else if (event.key === 'Escape') {
+      closeImage();
+    }
+  }
+});
 
 
   
