@@ -304,6 +304,7 @@ body {
   }
   
   .carousel-item {
+    position: relative;
     flex: 0 0 300px;
     scroll-snap-align: center;
     background: white;
@@ -1030,6 +1031,17 @@ html, body {
   color: #0a66c2 !important;
 }
 
+.tech-label {
+  position: absolute;
+  bottom: 10px;
+  left: 15px;
+  font-size: 0.85rem;
+  color: #000000;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 500;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+}
 
 
 
