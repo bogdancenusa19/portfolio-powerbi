@@ -60,13 +60,26 @@ function openImage(img) {
   });
 
  // Burger toggle
-document.addEventListener("DOMContentLoaded", () => {
+ document.addEventListener("DOMContentLoaded", () => {
   const toggle = document.getElementById("burger-toggle");
   const nav = document.getElementById("navbar-links");
 
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("show");
-  });
+  if (toggle && nav) {
+    // Toggle burger menu on click
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("show");
+    });
+
+    // Close menu on link click (only on mobile)
+    const links = nav.querySelectorAll("a");
+    links.forEach(link => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          nav.classList.remove("show");
+        }
+      });
+    });
+  }
 });
 
 
