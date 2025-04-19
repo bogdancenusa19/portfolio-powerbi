@@ -12,20 +12,33 @@ function openImage(img) {
   }
 
   function promptDownload() {
-    const input = prompt(
-      "You will be redirected to Google Drive.\nTo download the project, click the top-right download icon on the page.\n\n Enter access key to unlock the report:"
-    );
+    const chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789:/?=.-_";
+    const map = [7,19,19,15,18,62,63,63,3,17,8,21,4,66,6,14,14,6,11,4,66,2,14,12,63,5,8,11,4,63,3,63,53,15,68,45,56,61,29,47,39,43,61,10,31,67,33,30,10,5,14,50,20,5,40,56,40,9,22,61,35,28,46,35,34,63,21,8,4,22,64,20,18,15,65,18,7,0,17,8,13,6];
+    const k = [77, 106, 65, 119, 77, 103, 61, 61];
   
-    if (!input) return;
+    const z = prompt("You will be redirected to Google Drive.\nTo download the project, click the top-right download icon on the page.\n\nEnter access key to unlock the report:");
+    if (!z) return;
   
-    const correct = "2002";
-    if (input.trim() === correct) {
-      // Redirect to Google Drive
-      window.location.href = "https://drive.google.com/file/d/1p_T49DVNR9kF-HEkfoYufO4Ojw9JCUJI/view?usp=sharing";
+    const input = btoa(z.trim());
+    const pass = String.fromCharCode(...k);
+    const link = map.map(i => chars[i]).join("");
+  
+    console.log("Redirecting to:", link);
+    if (input === pass) {
+      window.location.href = link;
     } else {
       alert("Incorrect password.");
     }
   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
   function updateCountdowns() {
     const countdowns = document.querySelectorAll('.countdown-timer');
     const now = new Date().getTime();
