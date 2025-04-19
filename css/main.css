@@ -213,6 +213,7 @@ body {
     flex-direction: column;
   }
   
+  
   .container {
     flex: 1;
   }
@@ -732,18 +733,21 @@ html, body {
     font-style: italic;
   }
   .project-navbar {
-    position: sticky;
+    position: fixed;
     top: 0;
+    height: 55px;
     z-index: 1000;
-    background-color: #1f2e3d;
+    background-color: rgba(31, 46, 61, 1);
     color: white;
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 2rem;
+    justify-content: space-between;
+    padding: 0.5rem 1.2rem;
     flex-wrap: wrap;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
   }
+  
   
   .project-nav-left h1 {
     margin: 0;
@@ -797,7 +801,235 @@ html, body {
   }
   
   .project-navbar.scrolled {
-    background-color: rgba(31, 46, 61, 0.85); /* more transparent */
+    background-color: rgba(31, 46, 61, 0.85);
+    backdrop-filter: blur(8px);
   }
-          
-           
+  
+/* Burger Button */
+.burger {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* NAVBAR core */
+.project-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background-color: rgba(31, 46, 61, 1);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8rem 1.5rem;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
+}
+
+.project-navbar.scrolled {
+  background-color: rgba(31, 46, 61, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+.project-nav-left h1 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: white;
+}
+
+.nav-subtitle {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #ccc;
+}
+
+/* Navbar Links (Desktop) */
+.project-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.project-nav-right a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.project-nav-right a:hover {
+  color: #f1c40f;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .burger {
+    display: block;
+  }
+
+  .project-nav-right {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #1f2e3d;
+    margin-top: 1rem;
+    padding: 1rem 0;
+  }
+
+  .project-nav-right.show {
+    display: flex;
+  }
+
+  .project-nav-right a,
+  .project-nav-right .btn {
+    margin: 0.5rem 1.5rem;
+  }
+}
+
+
+
+html {
+  overflow-anchor: none;
+  scroll-behavior: smooth;
+}
+section {
+  scroll-margin-top: 90px; /* înălțimea navbarului + puțin spațiu */
+}
+#projects,
+#about,
+#experience,
+#summary,
+#gallery,
+#workflow {
+  scroll-margin-top: 90px;
+}
+
+html, body {
+  min-height: 100%;
+  height: auto;
+}
+.about-me-section {
+  background: #ffffff;
+  padding: 4rem 1rem 3rem;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.certificate {
+  text-align: center;
+}
+
+.certificate img {
+  width: 100%;
+  max-width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.certificate p {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #333;
+  font-style: italic;
+}
+
+.about-center {
+  text-align: center;
+}
+
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1.5rem;
+}
+
+.about-text {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Responsive */
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+
+.certificate img {
+  width: 100%;
+  max-width: 320px;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  animation: pulse 3s infinite ease-in-out;
+  transition: transform 0.25s ease-in-out;
+}
+
+
+.certificate img:hover {
+  animation: none;
+  transform: scale(1.05);
+}
+.certificate img:hover,
+.certificate img:focus {
+  animation: none;
+  transform: scale(1.05);
+}
+
+
+@media (max-width: 768px) {
+  .about-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cert-left {
+    order: 2;
+  }
+
+  .about-center {
+    order: 1;
+  }
+
+  .cert-right {
+    order: 3;
+  }
+}
+.project-nav-right a.linkedin-link {
+  color: white !important;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.project-nav-right a.linkedin-link:hover {
+  color: #0a66c2 !important;
+}
+
+
+
+

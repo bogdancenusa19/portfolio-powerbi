@@ -58,6 +58,19 @@ function openImage(img) {
       navbar.classList.remove('scrolled');
     }
   });
+
+ // Burger toggle
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.getElementById("burger-toggle");
+  const nav = document.getElementById("navbar-links");
+
+  toggle.addEventListener("click", () => {
+    nav.classList.toggle("show");
+  });
+});
+
+
+
   
   
   

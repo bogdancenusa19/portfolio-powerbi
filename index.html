@@ -9,21 +9,24 @@
 
 </head>
 <body>
-  <div class="page-wrapper">
-
-    <!-- Navbar -->
-    <nav class="navbar">
-      <div class="navbar-left">
+      <nav class="project-navbar">
+      <div class="project-nav-left">
         <h1>My Power BI Portfolio</h1>
-        <p>Data speaks louder than words.</p>
+        <p class="nav-subtitle">Data speaks louder than words.</p>
       </div>
-      <div class="navbar-right">
+    
+      <button class="burger" id="burger-toggle">☰</button>
+    
+      <div class="project-nav-right" id="navbar-links">
         <a href="#projects">Projects</a>
         <a href="#about">About Me</a>
         <a href="#experience">Experience</a>
+        <a href="https://www.linkedin.com/in/bogdancenusa19/"  target="_blank" class="linkedin-link">LinkedIn</a>
+
       </div>
     </nav>
-
+    
+    <div class="page-wrapper">
     <!-- Section 1: Projects -->
     <section class="carousel-section" id="projects">
       <div class="carousel">
@@ -39,6 +42,7 @@
           <img src="assets/wip.jpg" alt="Kraken Koffee Sales Infographic">
           <h3>Power BI - Kraken Koffee Sales Infographic</h3>
           <p>Coming soon...</p>
+          <br>
           <a href="#" class="btn btn-disabled" onclick="return false;">In Progress</a>
           <div class="countdown-timer" data-deadline="2025-04-23T12:00:00"></div>
         </div>
@@ -73,11 +77,33 @@
 
     <!-- Section 2: About Me -->
     <section class="about-me-section" id="about">
-      <img src="assets/me.jpg" alt="My Photo" class="profile-pic">
-      <p class="about-text">
-        I'm a passionate Power BI enthusiast with a background in game development and a growing interest in data analytics. I enjoy transforming raw data into clear and interactive stories that support decision-making.
-      </p>
+      <div class="about-grid">
+    
+        <div class="certificate cert-left">
+          <img src="assets/certGDA.png" alt="Certificate 1" onclick="openImage(this)">
+          <p>Google Data Analytics</p>
+        </div>
+    
+        <div class="about-center">
+          <img src="assets/me.jpg" alt="My Photo" class="profile-pic">
+          <p class="about-text">
+            I'm a passionate Power BI enthusiast with a background in game development and a growing interest in data analytics. I enjoy transforming raw data into clear and interactive stories that support decision-making.
+          </p>
+        </div>
+    
+        <div class="certificate cert-right">
+          <img src="assets/certDB.png" alt="Certificate 2"  onclick="openImage(this)">
+          <p>Data Analysis with Databricks</p>
+        </div>
+
+        <!-- 🔍 Lightbox container -->
+        <div id="lightbox" class="lightbox" onclick="closeImage()">
+          <img id="lightbox-img" src="" alt="Full image" />
+        </div>
+
+      </div>
     </section>
+    
 
     <!-- Section 3: Experience -->
     <section class="experience-section" id="experience">
