@@ -135,3 +135,16 @@ function promptDownload(projectName) {
     alert("Incorrect password.");
   }
 }
+document.addEventListener('DOMContentLoaded', () => {
+  const navLeft = document.querySelector('.project-nav-left');
+  if (navLeft) {
+    navLeft.style.cursor = 'pointer';
+    navLeft.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  }
+});
+
