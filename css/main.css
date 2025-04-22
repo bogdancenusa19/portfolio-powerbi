@@ -164,14 +164,16 @@ body {
   }
   
   .btn-yellow {
-    background-color: #f1c40f;
-    color: #1f2e3d;
+    background-color: #f1c40f #b3910b !important;
+    color: white !important;
+    font-weight: bold;
+  }
+  .btn-yellow:hover {
+    background-color: #d4ac0d6e !important;
+    color: rgb(34, 34, 34) !important;
   }
   
-  .btn-yellow:hover {
-    background-color: #d4ac0d;
-    color: white;
-  }
+  
   
   /* FOOTER */
   footer {
@@ -672,9 +674,11 @@ html, body {
     background-color: #ccc;
   }
   .countdown-timer {
-    margin-top: 0.8rem;
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
     font-size: 0.85rem;
-    color: #444;
+    color: #666;
     text-align: right;
   }
   .carousel-item {
@@ -1031,17 +1035,35 @@ html, body {
   color: #0a66c2 !important;
 }
 
-.tech-label {
-  position: absolute;
-  bottom: 10px;
-  left: 15px;
-  font-size: 0.85rem;
-  color: #000000;
-  padding: 4px 10px;
-  border-radius: 6px;
-  font-weight: 500;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+.carousel-item {
+  position: relative; /* important pentru poziționare absolută a copilului */
+  padding-bottom: 3rem; /* rezervă spațiu jos pentru etichete */
 }
+
+.tech-label-group {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: flex-start;
+}
+
+
+.tech-label {
+  display: inline-block;
+  padding: 0.3rem 0.7rem;
+  background-color: #f4f4f4;
+  color: #1f2e3d;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  font-weight: bold;
+  white-space: nowrap;
+}
+
 
 .flip-card {
   perspective: 1000px;
@@ -1155,6 +1177,160 @@ html, body {
 
 .lightbox-btn.next {
   right: 30px;
+}
+/* INFOGRAPHIC STYLING */
+.infographic-section {
+  margin: 2rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  justify-items: center;
+}
+
+.infographic-section img {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.infographic-section img:hover {
+  transform: scale(1.015);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* DAX SECTION */
+.dax-section {
+  background: #ffffff;
+  padding: 2rem 1rem;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  margin-top: 2rem;
+}
+
+.dax-section h3 {
+  text-align: center;
+  color: #1f2e3d;
+  margin-bottom: 1.5rem;
+}
+
+.dax-measure {
+  margin-bottom: 2rem;
+}
+
+.dax-measure h4 {
+  color: #007acc;
+  margin-bottom: 0.5rem;
+}
+
+.dax-measure pre {
+  background: #f4f4f4;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: Consolas, Monaco, 'Courier New', monospace;
+  font-size: 0.95rem;
+  color: #333;
+  box-shadow: inset 0 1px 4px rgba(0,0,0,0.1);
+}
+.dax-note {
+  margin-top: 1.5rem;
+  font-size: 0.95rem;
+  color: #555;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Section Title Sub */
+.section-subtitle {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: -1rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+
+/* LIGHTBOX IMAGE STYLE */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+}
+
+.lightbox-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.lightbox-btn.prev {
+  left: 5%;
+}
+
+.lightbox-btn.next {
+  right: 5%;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .infographic-section img {
+    max-width: 100%;
+  }
+
+  .dax-section li {
+    font-size: 0.9rem;
+  }
+}
+/* Specific doar pentru Kraken Koffee */
+.gallery.kraken {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-items: center;
+  margin-top: 2rem;
+}
+
+.gallery.kraken .image-block {
+  width: 100%;
+  max-width: 100%;
+}
+
+.gallery.kraken img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease-in-out, box-shadow 0.25s ease-in-out;
+  cursor: pointer;
+}
+
+.gallery.kraken img:hover {
+  transform: scale(1.015);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
 
 
