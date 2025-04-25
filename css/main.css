@@ -1424,5 +1424,12 @@ footer {
     padding: 0 10px; /* cum dorești tu */
   }
 }
+.status-note {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #777;
+  font-style: italic;
+  text-align: center;
+}
 
 
