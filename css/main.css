@@ -1431,5 +1431,9 @@ footer {
   font-style: italic;
   text-align: center;
 }
+.data-source-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
 
 
